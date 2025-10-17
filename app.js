@@ -1,10 +1,20 @@
-require("./sum.js");
-const { calculateSum, xF, x } = require("./sum.js");
-var name = "siva";
-var a = 10;
-var b = 20;
-console.log(x);
-console.log(calculateSum(a, b));
-console.log(name);
-// console.log(a + b);
-// console.log(global)
+// Synchronous blocking sleep function
+function sleep(milliseconds) {
+  const start = Date.now();
+  while (Date.now() - start < milliseconds) {
+    // Blocking loop - not recommended for real applications
+  }
+}
+
+function prepare(item) {
+  if (item === "coke") sleep(0);
+  else if (item === "noodles") sleep(5000);
+  else if (item === "pizza") sleep(10000);
+  console.log(item + " is ready");
+}
+
+prepare("coke");
+prepare("noodles");
+prepare("pizza");
+prepare("coke");
+prepare("noodles");
